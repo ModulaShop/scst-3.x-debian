@@ -76,6 +76,7 @@ install: build
 	done
 	install -vD -m 644 debian/Makefile-dkms $(TMPROOT)/usr/src/scst-$(DKMSMODVER)/Makefile
 	install -vD -m 644 debian/dkms.conf $(TMPROOT)/usr/src/scst-$(DKMSMODVER)/dkms.conf
+	install -vD -m 644 debian/scst-dkms.spec.in $(TMPROOT)/usr/src/scst-$(DKMSMODVER)/scst-dkms.spec.in
 	cp -a scst $(TMPROOT)/usr/src/scst-$(DKMSMODVER)/
 	mkdir $(TMPROOT)/usr/src/scst-$(DKMSMODVER)/iscsi-scst
 	cp -a iscsi-scst/{Makefile,include,kernel} $(TMPROOT)/usr/src/scst-$(DKMSMODVER)/iscsi-scst/
