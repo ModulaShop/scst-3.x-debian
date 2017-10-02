@@ -8,7 +8,8 @@ postinst_found=0
 
 case "$1" in
 	configure)
-		for DKMS_POSTINST in /usr/lib/dkms/common.postinst /usr/share/$DKMS_PACKAGE_NAME/postinst; do
+#		for DKMS_POSTINST in /usr/lib/dkms/common.postinst /usr/share/$DKMS_PACKAGE_NAME/postinst; do
+		for DKMS_POSTINST in /usr/src/$DKMS_NAME-$DKMS_VERSION/common.postinst /usr/share/$DKMS_PACKAGE_NAME/postinst; do
 			if [ -f $DKMS_POSTINST ]; then
 				$DKMS_POSTINST $DKMS_NAME $DKMS_VERSION /usr/share/$DKMS_PACKAGE_NAME "" $2
 				postinst_found=1
