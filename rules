@@ -65,6 +65,7 @@ install: build
 	install -vD -m 644 iscsi-scst/doc/manpages/iscsi-scst-adm.8 $(DESTDIR)$(MANDIR)/man8/iscsi-scst-adm.8
 	# create this directory manually
 	mkdir -p $(DESTDIR)/var/lib/scst/pr
+	mkdir -p $(DESTDIR)/var/lib/scst/vdev_mode_pages
 
 	# copy example scst.conf
 	install -vD -m 644 debian/scst.conf $(DESTDIR)/etc/scst.conf

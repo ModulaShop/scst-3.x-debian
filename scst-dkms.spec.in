@@ -211,7 +211,7 @@ rm -rf /usr/local/include/scst
 %post
 dkms add -m %{kmod_name} -v %{dkms_version} --rpm_safe_upgrade
 dkms build -m %{kmod_name} -v %{dkms_version}
-dkms install -m %{kmod_name} -v %{dkms_version} --force 
+dkms install -m %{kmod_name} -v %{dkms_version} --force
 
 %preun
 dkms remove -m %{kmod_name} -v %{dkms_version} --rpm_safe_upgrade --all

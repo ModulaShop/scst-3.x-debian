@@ -2,3 +2,4 @@ etc/init.d/scst
 usr/sbin/scstadmin
 usr/share/perl/*/SCST/SCST.pm
 var/lib/scst/pr
+var/lib/scst/vdev_mode_pages
