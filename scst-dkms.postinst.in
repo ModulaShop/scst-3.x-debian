@@ -6,6 +6,10 @@ DKMS_PACKAGE_NAME=$DKMS_NAME-dkms
 
 postinst_found=0
 
+echo "look for:"
+echo /usr/src/$DKMS_NAME-$DKMS_VERSION/common.postinst
+echo ''
+
 case "$1" in
 	configure)
 #		for DKMS_POSTINST in /usr/lib/dkms/common.postinst /usr/share/$DKMS_PACKAGE_NAME/postinst; do
