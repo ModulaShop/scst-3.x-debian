@@ -82,6 +82,7 @@ install: build
 	cp -a scst_local $(TMPROOT)/usr/src/scst-$(DKMSMODVER)/
 	cp -a qla2x00t $(TMPROOT)/usr/src/scst-$(DKMSMODVER)/
 	cp -a fcst $(TMPROOT)/usr/src/scst-$(DKMSMODVER)/
+	cp -a srpt $(TMPROOT)/usr/src/scst-$(DKMSMODVER)/
 
 	# install files
 	dh_installman

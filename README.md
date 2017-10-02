@@ -2,6 +2,8 @@
 
 Debian dkms-enabled packaging for SCST
 
+Adopted to PVE and added srpt / ip_srpt
+
 ### Begin GLS 2017-07-23 Update ###
 
 GLS 2017-07-29 Update
@@ -22,7 +24,7 @@ More information on the SCST project here:  http://scst.sourceforge.net/
 
 To use this github archive to build and install latest SCST source code as DKMS modules to Ubuntu 15.04+ (15.04-17.04+)
 
-Go to this link here: 
+Go to this link here:
 
 https://github.com/gstanden/orabuntu-lxc
 
@@ -42,7 +44,7 @@ Untar this archive as shown below:
 
 > tar -xvf scst-files.tar
 
-and then run the 
+and then run the
 
 > ./create-scst.sh
 
@@ -54,7 +56,7 @@ The create-scst.sh and associated scripts which are called does all of the follo
 
 * Installs SCST (for most kernels install DKMS-enabled SCST modules which auto-rebuild across kernel updates)
 * Creates an SCST target, group and LUNs (optional: edit the create-scst-oracle.sh script to suit specific requirements)
-* Creates an appropriate /etc/multipath.conf file for the hardware and system running 
+* Creates an appropriate /etc/multipath.conf file for the hardware and system running
 * Backs up the existing /etc/multipath.conf (if any) and installs the new /etc/multipath.conf
 * Logs in via iscsi-initiator and configures on-boot properties of SCST SAN
 
@@ -62,7 +64,7 @@ The create-scst.sh and associated scripts which are called does all of the follo
 
 DKMS means among other things that you will not have to recompile SCST everytime you upgrade kernel.
 
-DKMS takes care of this for you automatically. 
+DKMS takes care of this for you automatically.
 
 # References
 
@@ -93,8 +95,8 @@ This fork has been updated for systemd-enabled Debian-based Linuxes (e.g. Ubuntu
 Releases and Kernels Tested and Known to Work with DKMS:
 
 Ubuntu Desktop 64-bit:
- 
-* Ubuntu	14.04	Trusty Tahr	3.13.0-125-generic 
+
+* Ubuntu	14.04	Trusty Tahr	3.13.0-125-generic
 * Ubuntu 	15.04	Vivid Vervet	3.19.0-84-generic
 * Ubuntu	15.10	Wily Werewolf	4.2.0-42-generic
 * Ubuntu 	16.04	Xenial Xerus	4.10.0-30-generic	(16.04.3 HWE kernel ONLY)
@@ -109,12 +111,12 @@ Releases and Kernels Tested that DO NOT WORK with DKMS:
 
 Ubuntu Desktop 64-bit:
 
-* Ubuntu 	16.04	Xenial Xerus	4.4.x-x-generic 
+* Ubuntu 	16.04	Xenial Xerus	4.4.x-x-generic
 
-* Note:	Script will do a non-DKMS SCST install if kernel 4.4.* MUST be used.  
+* Note:	Script will do a non-DKMS SCST install if kernel 4.4.* MUST be used.
 * Note:	Strongly recommend automatic update to the 16.04.3 HWE kernel so that SCST DKMS can be used.
 * Note:	Install DKMS on an early 4.4.x-x-generic 16.04 kernel eg. 4.4.0-31-generic will work but -
-* Note:	SCST DKMS breaks on update to 16.04 4.4.0-87,88,89-generic so use HWE 4.10 HWE kernel on 16.04 
+* Note:	SCST DKMS breaks on update to 16.04 4.4.0-87,88,89-generic so use HWE 4.10 HWE kernel on 16.04
 
 (The above tests were done on VirtualBox VM's which had all available updates applied to a vanilla install)
 

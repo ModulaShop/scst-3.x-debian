@@ -40,6 +40,7 @@ case "$1" in
 		sudo modprobe scst_cdrom
 		sudo modprobe scst_changer
 		sudo modprobe iscsi-scst
+		sudo modprobe ib_srpt
 		sudo systemctl enable scst.service
 		sudo modprobe iscsi-scst
 		sudo systemctl enable scst.service
@@ -95,6 +96,12 @@ case "$1" in
 		then
 		sudo sh -c "echo 'scst_changer'		>> /etc/modules"
 		fi
+		grep ib_srpt /etc/modules
+		if [ $? -ne 0 ]
+		then
+		sudo sh -c "echo 'ib_srpt'		>> /etc/modules"
+		fi
+
 		sudo sh -c "echo '[Unit]'									>  /etc/systemd/system/scst-san.service"
 		sudo sh -c "echo 'Description=SCST SAN Service'							>> /etc/systemd/system/scst-san.service"
 		sudo sh -c "echo 'After=scst.service'								>> /etc/systemd/system/scst-san.service"
